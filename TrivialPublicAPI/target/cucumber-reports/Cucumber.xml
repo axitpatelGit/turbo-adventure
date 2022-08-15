@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="10" time="14.059">
+<testcase classname="Validating trivial public API" name="Verify trivial public API returning correct current date &amp; time value" time="4.533">
+<system-out><![CDATA[Given trivial public API http GET request...................................passed
+When unix time is current time..............................................passed
+Then API call is success with status code 200...............................passed
+And Datetime field present in response should be current Time...............passed
+]]></system-out>
+</testcase>
+<testcase classname="Validating trivial public API" name="Verify trivial public API returning correct date &amp; time for lower side boundry value" time="0.964">
+<system-out><![CDATA[Given trivial public API http GET request...................................passed
+When unix time is "-2147483648".............................................passed
+Then API call is success with status code 200...............................passed
+And "Datetime" field present in response should be "1901-12-13 20:45:52"....passed
+]]></system-out>
+</testcase>
+<testcase classname="Validating trivial public API" name="Verify trivial public API returning Error message for outside lower boundry value" time="0.956">
+<system-out><![CDATA[Given trivial public API http GET request...................................passed
+When unix time is "-2147483649".............................................passed
+Then API call is success with status code 400...............................passed
+And "Error" field present in response should be "UnixTimeService.RESTHost.fromunixtimestamp.TryCatch.Try.UnixTimeStamp: Value was either too large or too small for an Int32.".passed
+]]></system-out>
+</testcase>
+<testcase classname="Validating trivial public API" name="Verify trivial public API returning correct date &amp; time for zero value" time="0.959">
+<system-out><![CDATA[Given trivial public API http GET request...................................passed
+When unix time is "0".......................................................passed
+Then API call is success with status code 200...............................passed
+And "Datetime" field present in response should be "1970-01-01 00:00:00"....passed
+]]></system-out>
+</testcase>
+<testcase classname="Validating trivial public API" name="Verify trivial public API returning correct date &amp; time for higher side boundry value" time="1.335">
+<system-out><![CDATA[Given trivial public API http GET request...................................passed
+When unix time is "2147483647"..............................................passed
+Then API call is success with status code 200...............................passed
+And "Datetime" field present in response should be "2038-01-19 03:14:07"....passed
+]]></system-out>
+</testcase>
+<testcase classname="Validating trivial public API" name="Verify trivial public API returning Error message for outside higher boundry value" time="1.073">
+<system-out><![CDATA[Given trivial public API http GET request...................................passed
+When unix time is "2147483648"..............................................passed
+Then API call is success with status code 400...............................passed
+And "Error" field present in response should be "UnixTimeService.RESTHost.fromunixtimestamp.TryCatch.Try.UnixTimeStamp: Value was either too large or too small for an Int32.".passed
+]]></system-out>
+</testcase>
+<testcase classname="Validating trivial public API" name="Verify trivial public API returning Error message for blank value" time="0.919">
+<system-out><![CDATA[Given trivial public API http GET request...................................passed
+When unix time is ""........................................................passed
+Then API call is success with status code 400...............................passed
+And "Error" field present in response should be "UnixTimeService.RESTHost.fromunixtimestamp.TryCatch.Try.UnixTimeStamp: Value cannot be null. (Parameter 's') (Parameter 's')".passed
+]]></system-out>
+</testcase>
+<testcase classname="Validating trivial public API" name="Verify trivial public API returning Error message for unix time greater than 10 digits" time="0.938">
+<system-out><![CDATA[Given trivial public API http GET request...................................passed
+When unix time is "15498922800".............................................passed
+Then API call is success with status code 400...............................passed
+And "Error" field present in response should be "UnixTimeService.RESTHost.fromunixtimestamp.TryCatch.Try.UnixTimeStamp: Value was either too large or too small for an Int32.".passed
+]]></system-out>
+</testcase>
+<testcase classname="Validating trivial public API" name="Verify trivial public API returning correct date &amp; time for unix time less than 10 digits" time="0.919">
+<system-out><![CDATA[Given trivial public API http GET request...................................passed
+When unix time is "154989228"...............................................passed
+Then API call is success with status code 200...............................passed
+And "Datetime" field present in response should be "1974-11-29 20:33:48"....passed
+]]></system-out>
+</testcase>
+<testcase classname="Validating trivial public API" name="Verify trivial public API returning Error message for invalid string as unix time" time="1.067">
+<system-out><![CDATA[Given trivial public API http GET request...................................passed
+When unix time is "dt15498980"..............................................passed
+Then API call is success with status code 400...............................passed
+And "Error" field present in response should be "UnixTimeService.RESTHost.fromunixtimestamp.TryCatch.Try.UnixTimeStamp: Input string was not in a correct format.".passed
+]]></system-out>
+</testcase>
+</testsuite>
