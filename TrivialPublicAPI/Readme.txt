@@ -3,21 +3,21 @@ Pre requisites for Test setup –
 1.	Get the project from below Git repository path.
 	https://github.com/axitpatelGit/turbo-adventure
 2.	Ensure Java and Maven installed in the system and path added in environment variables as below. 
-	a.	Add M2_HIME, MAVEN_HOME, JAVA_HOME in system variables.
+	a.	Add M2_HOME, MAVEN_HOME, JAVA_HOME in system variables.
 	b.	Also add %MAVEN_HOME%\bin  and %M2_HOME%\bin in Path variable.
 
 ========================================================================================================
 
 Cucumber Project Structure – 
 --------------------------------------------------------------------------------------------------------
--	Cucumber test runner file path : "C:\Users\HP\eclipse-workspace\turbo-adventure\TrivialPublicAPI\src\test\resources\cucumber\Options\CucumberRunnerTest.java"
--	Feature file path - "C:\Users\HP\eclipse-workspace\turbo-adventure\TrivialPublicAPI\src\test\resources\features\EpochToHumanReadable.feature"
--	Step definition file path - "C:\Users\HP\eclipse-workspace\turbo-adventure\TrivialPublicAPI\src\test\resources\stepDefinations\StepDefination.java"
+-	Cucumber test runner file path : "\turbo-adventure\TrivialPublicAPI\src\test\resources\cucumber\Options\CucumberRunnerTest.java"
+-	Feature file path - "\turbo-adventure\TrivialPublicAPI\src\test\resources\features\EpochToHumanReadable.feature"
+-	Step definition file path - "\turbo-adventure\TrivialPublicAPI\src\test\resources\stepDefinations\StepDefination.java"
 
 ========================================================================================================
 
 Test scenario written at below excel – 
-"C:\Users\HP\eclipse-workspace\turbo-adventure\TrivialPublicAPI\Test Scenario Sheet.xlsx"
+"\turbo-adventure\TrivialPublicAPI\Test Scenario Sheet.xlsx"
 
 ========================================================================================================
 
